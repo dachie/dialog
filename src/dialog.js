@@ -358,6 +358,19 @@ define(function(require, exports, module) {
                 clearInterval(this._interval);
                 delete this._interval;
             }
+            /*#41 : 关于dialog内容高度超过父窗体高度时 by dachie*/
+            if(parseInt(h)>=parent.window.document.documentElement.clientHeight){
+                this.set("align",{
+                    selfXY: [ "50%", 0 ],
+                    baseXY: [ "50%", 0 ]
+                });
+            }else{
+
+                this.set("align",{
+                    selfXY: [ "50%", "50%" ],
+                    baseXY: [ "50%", "50%" ]
+                });
+            }
         }
 
     });
